@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide UI + Client Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body class="bg-white text-gray-800 font-sans">
+    <div id="navbar-container"></div>
+
+    <div id="products-dropdown-container" style="position: absolute; z-index: 999;"></div>
+    <div id="about-dropdown-container" style="position: absolute; z-index: 999;"></div>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <button class="close-btn" onclick="closeCart()">×</button>
+        <h5 class="fw-bold">Add to Cart</h5>
+        <div class="empty-message">Empty</div>
+        <div class="item-box">Add a item</div>
+    </div>
+
+    <!-- Navigation Dots -->
+
+    <!-- Hero Section -->
+    <section id="hero-section" class="bg-white mt-14"
+        style="margin-bottom: 3.5rem; margin-left: 3.5rem; margin-right: 3.5rem;">
+        <div class="max-w-[100vw] mx-auto">
+            <div class="relative w-full h-screen flex items-center justify-center"
+                style="height: calc(100vh - 3.5rem - 3.5rem - 3.5rem); border-radius: 1.5rem; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); margin-top: -1.5rem;">
+                <video muted autoplay loop playsinline webkit-playsinline preload="auto"
+                    class="absolute inset-0 w-full h-full object-cover">
+                    <source src="assets/woodland-trees.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+
+                <!-- <div class="absolute inset-0 bg-black bg-opacity-30 z-0"></div> -->
+
+                <div class="absolute inset-0 z-10 flex items-center justify-center text-center px-4">
+                    <div class="text-white text-center max-w-3xl">
+                        <h3 class="text-2xl md:text-4xl mb-4 drop-shadow-md">
+                            Sustainable Solutions for a Greener Tomorrow
+                        </h3>
+                        <p class="text-base md:text-lg leading-relaxed drop-shadow-md">
+                            At Aumekaa, we provide 100% plastic-free, biodegradable, and
+                            compostable <br> alternatives for both businesses and consumers—ensuring
+                            eco-friendly living <br> without compromising quality.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Square Plate Section -->
+    <section id="square-plate-section">
+        <div class="main-container" onclick="handleSquarePlateClick()">
+            <div class="dummy-content left">
+                <h3>DUMMY CONTENT</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit augue diam, accumsan.</p>
+            </div>
+
+            <div class="dummy-content right">
+                <h3>DUMMY CONTENT</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit augue diam, accumsan.</p>
+            </div>
+
+            <div class="plate-wrapper">
+                <img src="./assets/Plate.png" alt="Square Plate" class="plate-image" />
+            </div>
+
+            <div id="square-background-text" class="background-text">Square Plate</div>
+        </div>
+    </section>
+
+    <!-- Round Plate Section -->
+    <section id="round-plate-section">
+        <div class="main-container" onclick="handleRoundPlateClick()">
+            <div class="dummy-content bottom-left">
+                <h3>DUMMY CONTENT</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit augue diam, accumsan.</p>
+            </div>
+
+            <div class="dummy-content top-right">
+                <h3>DUMMY CONTENT</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit augue diam, accumsan.</p>
+            </div>
+
+            <div class="plate-wrapper">
+                <img src="./assets/images/round-plate.png" alt="Round Plate" class="plate-image" />
+            </div>
+
+            <div id="round-background-text" class="background-text">Round Plate</div>
+        </div>
+    </section>
+
+    <!-- Deep Shape Section -->
+    <section id="deep-shape-section">
+        <div class="main-container" onclick="handleDeepShapeClick()">
+            <div class="dummy-content bottom-left">
+                <h3>DUMMY CONTENT</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit augue diam, accumsan.</p>
+            </div>
+
+            <div class="dummy-content top-right">
+                <h3>DUMMY CONTENT</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit augue diam, accumsan.</p>
+            </div>
+
+            <div class="plate-wrapper">
+                <img src="./assets/images/deep-shape.png" alt="Deep Shape" class="plate-image" />
+            </div>
+
+            <div id="deep-shape-background-text" class="background-text">Deep Shapes</div>
+        </div>
+    </section>
+
+    <!-- Tray Section -->
+    <section id="tray-section">
+        <div class="main-container" onclick="handleTrayClick()">
+            <div class="dummy-content bottom-left">
+                <h3>DUMMY CONTENT</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit augue diam, accumsan.</p>
+            </div>
+
+            <div class="dummy-content top-right">
+                <h3>DUMMY CONTENT</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit augue diam, accumsan.</p>
+            </div>
+
+            <div class="plate-wrapper">
+                <img src="./assets/tray.png" alt="Tray" class="plate-image" />
+            </div>
+
+            <div id="tray-background-text" class="background-text">Trays</div>
+        </div>
+    </section>
+
+    <!-- Sustainable Solutions Section (Original) -->
+    <section id="sustainable-section" class="text-center" onclick="handleSustainableClick()" data-aos="fade-up">
+        <!-- INLINE STYLES FOR HOVER BORDER + IMAGE RADIUS -->
+        <style>
+            /* card base */
+            #sustainable-section .solution-card {
+                border: 2px solid transparent;
+                border-radius: 16px;
+                overflow: hidden;
+                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+                background: #fff;
+                transition: border-color 0.3s ease, transform 0.3s ease;
+            }
+
+            /* hover effect */
+            #sustainable-section .solution-card:hover {
+                box-shadow: 0 0 12px 2px rgba(25, 135, 84, 0.4);
+                transform: translateY(-5px);
+            }
+
+            /* make img full-width + top corners rounded */
+            #sustainable-section .solution-card img {
+                display: block;
+                width: 100%;
+                height: auto;
+                border-top-left-radius: 16px;
+                border-top-right-radius: 16px;
+            }
+        </style>
+
+        <div class="container">
+            <h2 class="section-title mb-3">Sustainable Solutions</h2>
+            <p class="section-subtitle mb-4">
+                Discover our range of eco-friendly products made from renewable materials<br>
+                designed to leave zero toxic waste.
+            </p>
+
+            <div class="row g-4 justify-content-center mt-2">
+
+                <!-- CARD 1 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100" style="transform: translateY(-30px);">
+                    <div class="solution-card">
+                        <img src="./assets/images/everyday-use-products.png" alt="Everyday Use" />
+                        <div class="solution-body" style="padding: 20px;">
+                            <img class="icon-circle" src="./assets/images/Overlay.png"
+                                style="background:#f2f4f6; color:#667085; width:40px; height:40px; border-radius:50%; margin-bottom:10px;" />
+                            <h6 class="fw-semibold">Everyday Use</h6>
+                            <p>Sustainable tableware, drinkware, and home essentials for daily use.</p>
+                            <a href="#" class="link-green">View Products →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200" style="transform: translateY(30px);">
+                    <div class="solution-card">
+                        <img src="./assets/images/industrial-solutions.png" alt="Industrial Solutions" />
+                        <div class="solution-body" style="padding: 20px;">
+                            <img class="icon-circle" src="./assets/images/Overlay-21.png"
+                                style="background:#f2f4f6; color:#667085; width:40px; height:40px; border-radius:50%; margin-bottom:10px;" />
+                            <h6 class="fw-semibold">Industrial Solutions</h6>
+                            <p>Eco-friendly packaging and industrial-grade sustainable materials.</p>
+                            <a href="#" class="link-green">View Solutions →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300" style="transform: translateY(-30px);">
+                    <div class="solution-card">
+                        <img src="./assets/Foodservice-Packaging.png" alt="Foodservice Packaging" />
+                        <div class="solution-body" style="padding: 20px;">
+                            <img class="icon-circle" src="./assets/Overlay-3.png"
+                                style="background:#f2f4f6; color:#667085; width:40px; height:40px; border-radius:50%; margin-bottom:10px;" />
+                            <h6 class="fw-semibold">Foodservice Packaging</h6>
+                            <p>Compostable containers, cutlery, and service items for food businesses.</p>
+                            <a href="#" class="link-green">View Products →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="400" style="transform: translateY(30px);">
+                    <div class="solution-card">
+                        <img src="./assets/images/Custom-Solutions.png" alt="Custom Solutions" />
+                        <div class="solution-body" style="padding: 20px;">
+                            <img class="icon-circle" src="./assets/Overlay-31.png"
+                                style="background:#f2f4f6; color:#667085; width:40px; height:40px; border-radius:50%; margin-bottom:10px;" />
+                            <h6 class="fw-semibold">Custom Solutions</h6>
+                            <p>Tailored eco products crafted for your business or event needs.</p>
+                            <a href="#" class="link-blue">View Products →</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Sustainable Solutions Section 2 (New Layout) -->
+    <section id="sustainable2-section" class="text-center" onclick="handleSustainable2Click()">
+        <div class="container">
+            <h2 class="section-title mb-3 mt-1">Sustainable Manufacturing</h2>
+            <p class="section-subtitle mb-4">
+                Discover our eco-friendly production processes and quality standards<br>
+                designed for maximum sustainability and minimal environmental impact.
+            </p>
+
+            <div class="relative-container">
+                <!-- Center Image -->
+                <img src="assets/ManufacturingFacility.png" class="main-image" alt="Sustainable Production Facility"
+                    data-aos="fade-in" />
+
+                <!-- Top Left Card -->
+                <div class="overlay-card corner-card top-left " data-aos="fade-down-right" data-aos-delay="100">
+                    <div class="d-flex align-items-start">
+                        <img class="overlay-icon" src="./assets/overlay9.png" alt="Zero-Waste Production" />
+                        <div>
+                            <p class="overlay-title">Zero-Waste Production</p>
+                            <p class="overlay-text">
+                                Our manufacturing process is designed to minimize waste and
+                                maximize resource efficiency.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top Right Card -->
+                <div class="overlay-card corner-card top-right" data-aos="fade-down-left" data-aos-delay="200">
+                    <div class="d-flex align-items-start">
+                        <img class="overlay-icon" src="./assets/circle.png" alt="Advanced Production" />
+                        <div>
+                            <p class="overlay-title">Advanced Production Facilities</p>
+                            <p class="overlay-text">
+                                Our state-of-the-art manufacturing units are equipped with the latest technology to
+                                ensure consistent
+                                quality
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Left Card -->
+                <div class="overlay-card corner-card bottom-left" data-aos="fade-up-right" data-aos-delay="300">
+                    <div class="d-flex align-items-start">
+                        <img class="overlay-icon" src="./assets/images/certification.png" alt="Certifications" />
+                        <div>
+                            <p class="overlay-title">Certifications</p>
+                            <p class="overlay-text">
+                                ISO 9001:2015, ISO 14001:2015, and other certifications for
+                                quality and environmental compliance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Right Card -->
+                <div class="overlay-card corner-card bottom-right" data-aos="fade-up-left" data-aos-delay="400">
+                    <div class="d-flex align-items-start">
+                        <img class="overlay-icon" src="./assets/quality.png" alt="Quality Control" />
+                        <div>
+                            <p class="overlay-title">Quality Control Lab</p>
+                            <p class="overlay-text">
+                                Rigorous testing protocols ensure our products meet international
+                                sustainability standards.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section id="core-values-section" class="mt-5 text-center" onclick="handleCoreValuesClick()">
+        <div class="container">
+            <h2 class="section-title mb-2">Our Core Values</h2>
+            <p class="section-subtitle mb-4">Built on strong principles that drive our innovation and commitment to
+                sustainability. Built on strong principles that drive our innovation</p>
+
+            <div class="row g-4" style="margin-inline: 10%;">
+                <!-- Value 1 -->
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="value-card">
+                        <img src="./assets/Overlay-5.png" class="value-icon" />
+                        <div class="value-title">Environmental Stewardship</div>
+                        <div class="value-desc">Committed to developing products that minimize environmental impact and
+                            promote
+                            ecological balance.</div>
+                    </div>
+                </div>
+
+                <!-- Value 2 -->
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="value-card">
+                        <img src="./assets/Overlay-6.png" class="value-icon" />
+                        <div class="value-title">Customer Partnership</div>
+                        <div class="value-desc">Building lasting relationships through collaboration and dedicated
+                            support.</div>
+                    </div>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="value-card">
+                        <img src="./assets/Overlay-7.png" class="value-icon" />
+                        <div class="value-title">Innovation Excellence</div>
+                        <div class="value-desc">Continuously pushing boundaries to create sustainable solutions that
+                            meet modern
+                            needs.</div>
+                    </div>
+                </div>
+
+                <!-- Value 4 -->
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="value-card">
+                        <img src="./assets/Overlay-8.png" class="value-icon" />
+                        <div class="value-title">Quality Assurance</div>
+                        <div class="value-desc">Maintaining highest standards in sustainable product development and
+                            manufacturing.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="featured-products-section" class="mt-5 text-center" onclick="handleFeaturedProductsClick()">
+        <div class="container">
+            <h2 class="section-title mb-2">Featured Products</h2>
+            <p class="section-subtitle mb-5">
+                Explore our most popular sustainable alternatives<br>
+                that help reduce environmental impact.
+            </p>
+
+            <div class="row g-4 px-4">
+                <!-- Product 1 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card h-100">
+                        <img src="./assets/images/Bamboo-Cutlery-Set.png" alt="Bamboo Cutlery Set">
+                        <div class="product-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge badge-success">Bestseller</span>
+                                <span class="rating">★★★★★ <small class="text-muted">(128)</small></span>
+                            </div>
+                            <div class="product-title">Bamboo Cutlery Set</div>
+                            <div class="product-text">Reusable bamboo utensils including fork, knife, spoon, and
+                                chopsticks in a
+                                convenient travel pouch.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card h-100">
+                        <img src="./assets/Sugarcane-Food-Containers.png" alt="Sugarcane Containers">
+                        <div class="product-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge badge-primary">New Arrival</span>
+                                <span class="rating">★★★★★ <small class="text-muted">(94)</small></span>
+                            </div>
+                            <div class="product-title">Sugarcane Food Containers</div>
+                            <div class="product-text">Biodegradable containers made from sugarcane fiber (bagasse),
+                                perfect for
+                                takeaway and food service.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card h-100">
+                        <img src="./assets/images/Cornstarch-Bags.png" alt="Cornstarch Bags">
+                        <div class="product-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge badge-purple">Popular</span>
+                                <span class="rating">★★★★☆ <small class="text-muted">(76)</small></span>
+                            </div>
+                            <div class="product-title">Cornstarch Bags</div>
+                            <div class="product-text">100% compostable bags made from cornstarch, perfect for shopping,
+                                produce, and
+                                waste management.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries We Serve Section -->
+    <section id="industries-section" class="mt-5 text-center" onclick="handleIndustriesClick()">
+        <div class="container">
+            <h2 class="section-title mb-2">Industries We Serve</h2>
+            <p class="section-subtitle mb-5">
+                Providing sustainable solutions across diverse industry sectors.
+            </p>
+
+            <div class="row g-4 justify-content-center zigzag px-4">
+                <div class="col-6 col-md-3" data-aos="fade-left" data-aos-delay="100">
+                    <div class="industry-card">
+                        <div class="industry-icon">
+                            <img src="./assets/images/Overlay-3.png" alt="Food & Beverage" />
+                        </div>
+                        <div class="industry-label">Food &amp; Beverage</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="industry-card">
+                        <div class="industry-icon">
+                            <img src="./assets/images/Retail.png" alt="Retail" />
+                        </div>
+                        <div class="industry-label">Retail</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-down" data-aos-delay="300">
+                    <div class="industry-card">
+                        <div class="industry-icon">
+                            <img src="./assets/images/Hospitality.png" alt="Hospitality" />
+                        </div>
+                        <div class="industry-label">Hospitality</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-right" data-aos-delay="400">
+                    <div class="industry-card">
+                        <div class="industry-icon">
+                            <img src="./assets/images/manufacturing.png" alt="Logistics" />
+                        </div>
+                        <div class="industry-label">Logistics</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-left" data-aos-delay="500">
+                    <div class="industry-card">
+                        <div class="industry-icon">
+                            <img src="./assets/images/healthcare.png" alt="Healthcare" />
+                        </div>
+                        <div class="industry-label">Healthcare</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-right" data-aos-delay="600">
+                    <div class="industry-card">
+                        <div class="industry-icon">
+                            <img src="./assets/images/logistics.png" alt="Manufacturing" />
+                        </div>
+                        <div class="industry-label">Manufacturing</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="700">
+                    <div class="industry-card">
+                        <div class="industry-icon">
+                            <img src="./assets/images/ecommerce.png" alt="E-commerce" />
+                        </div>
+                        <div class="industry-label">E-commerce</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-down" data-aos-delay="800">
+                    <div class="industry-card">
+                        <div class="industry-icon">
+                            <img src="./assets/images/agriculture.png" alt="Agriculture" />
+                        </div>
+                        <div class="industry-label">Agriculture</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Verticals Section -->
+    <section id="business-section" class="mt-5 text-center" onclick="handleBusinessClick()">
+        <div class="container">
+            <h2 class="section-title mb-2">Business Verticals</h2>
+            <p class="section-subtitle mb-5">Comprehensive sustainable solutions across multiple business segments.</p>
+
+            <div class="row g-4 px-4">
+                <!-- Consumer Products -->
+                <div class="col-md-4" data-aos="fade-right" data-aos-delay="300">
+                    <div class="vertical-card h-100">
+                        <img src="https://in.images.search.yahoo.com/images/view;_ylt=AwrKHO0SAD9oUnQSBkm9HAx.;_ylu=c2VjA3NyBHNsawNpbWcEb2lkAzc5OWNmNjhjMzQxNDVhZGQ3NDExMDI2ZGE3YTdmNmU1BGdwb3MDMQRpdANiaW5n?back=https%3A%2F%2Fin.images.search.yahoo.com%2Fsearch%2Fimages%3Fp%3Dfood%2Becommerce%2Bphotos%26type%3DE211IN1510G0%26fr%3Dmcafee%26fr2%3Dpiv-web%26tab%3Dorganic%26ri%3D1&w=840&h=449&imgurl=apparelmagazine.co.nz%2Fsupermarketnews%2Fwp-content%2Fuploads%2Fsites%2F2%2F2019%2F05%2Ffood-e-commerce.jpg&rurl=http%3A%2F%2Fsupermarketnews.co.nz%2Ffood-e-commerce-on-the-rise%2F&size=51KB&p=food+ecommerce+photos&oid=799cf68c34145add7411026da7a7f6e5&fr2=piv-web&fr=mcafee&tt=FOOD+E-COMMERCE+ON+THE+RISE+%7C+Supermarket+News&b=0&ni=21&no=1&ts=&tab=organic&sigr=eslfMapBtKN0&sigb=Gtt_PxnQwzX7&sigi=2M_ITFnhz_eg&sigt=clh9arV_h.Qe&.crumb=YzzVYP1evBb&fr=mcafee&fr2=piv-web&type=E211IN1510G0"
+                            alt="Consumer Products">
+                        <div class="vertical-content text-start">
+                            <h5>Consumer Products</h5>
+                            <p>Sustainable alternatives for everyday use, from kitchen essentials to personal care
+                                items.</p>
+                            <ul>
+                                <li>Home & Kitchen</li>
+                                <li>Personal Care</li>
+                                <li>Lifestyle Products</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industrial Solutions -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="vertical-card h-100">
+                        <img src="https://in.images.search.yahoo.com/images/view;_ylt=AwrKHO0SAD9oUnQSBkm9HAx.;_ylu=c2VjA3NyBHNsawNpbWcEb2lkAzc5OWNmNjhjMzQxNDVhZGQ3NDExMDI2ZGE3YTdmNmU1BGdwb3MDMQRpdANiaW5n?back=https%3A%2F%2Fin.images.search.yahoo.com%2Fsearch%2Fimages%3Fp%3Dfood%2Becommerce%2Bphotos%26type%3DE211IN1510G0%26fr%3Dmcafee%26fr2%3Dpiv-web%26tab%3Dorganic%26ri%3D1&w=840&h=449&imgurl=apparelmagazine.co.nz%2Fsupermarketnews%2Fwp-content%2Fuploads%2Fsites%2F2%2F2019%2F05%2Ffood-e-commerce.jpg&rurl=http%3A%2F%2Fsupermarketnews.co.nz%2Ffood-e-commerce-on-the-rise%2F&size=51KB&p=food+ecommerce+photos&oid=799cf68c34145add7411026da7a7f6e5&fr2=piv-web&fr=mcafee&tt=FOOD+E-COMMERCE+ON+THE+RISE+%7C+Supermarket+News&b=0&ni=21&no=1&ts=&tab=organic&sigr=eslfMapBtKN0&sigb=Gtt_PxnQwzX7&sigi=2M_ITFnhz_eg&sigt=clh9arV_h.Qe&.crumb=YzzVYP1evBb&fr=mcafee&fr2=piv-web&type=E211IN1510G0"
+                            alt="Industrial Solutions">
+                        <div class="vertical-content text-start">
+                            <h5>Industrial Solutions</h5>
+                            <p>Large-scale sustainable packaging and material solutions for industries.</p>
+                            <ul>
+                                <li>Bulk Packaging</li>
+                                <li>Manufacturing Materials</li>
+                                <li>Custom Solutions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research & Innovation -->
+                <div class="col-md-4" data-aos="fade-left" data-aos-delay="300">
+                    <div class="vertical-card h-100">
+                        <img src="https://in.images.search.yahoo.com/images/view;_ylt=AwrKHO0SAD9oUnQSBkm9HAx.;_ylu=c2VjA3NyBHNsawNpbWcEb2lkAzc5OWNmNjhjMzQxNDVhZGQ3NDExMDI2ZGE3YTdmNmU1BGdwb3MDMQRpdANiaW5n?back=https%3A%2F%2Fin.images.search.yahoo.com%2Fsearch%2Fimages%3Fp%3Dfood%2Becommerce%2Bphotos%26type%3DE211IN1510G0%26fr%3Dmcafee%26fr2%3Dpiv-web%26tab%3Dorganic%26ri%3D1&w=840&h=449&imgurl=apparelmagazine.co.nz%2Fsupermarketnews%2Fwp-content%2Fuploads%2Fsites%2F2%2F2019%2F05%2Ffood-e-commerce.jpg&rurl=http%3A%2F%2Fsupermarketnews.co.nz%2Ffood-e-commerce-on-the-rise%2F&size=51KB&p=food+ecommerce+photos&oid=799cf68c34145add7411026da7a7f6e5&fr2=piv-web&fr=mcafee&tt=FOOD+E-COMMERCE+ON+THE+RISE+%7C+Supermarket+News&b=0&ni=21&no=1&ts=&tab=organic&sigr=eslfMapBtKN0&sigb=Gtt_PxnQwzX7&sigi=2M_ITFnhz_eg&sigt=clh9arV_h.Qe&.crumb=YzzVYP1evBb&fr=mcafee&fr2=piv-web&type=E211IN1510G0"
+                            alt="Research and Innovation">
+                        <div class="vertical-content text-start">
+                            <h5>Research & Innovation</h5>
+                            <p>Developing next-generation sustainable materials and solutions.</p>
+                            <ul>
+                                <li>Material Development</li>
+                                <li>Product Innovation</li>
+                                <li>Sustainability Research</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events & Media Section -->
+    <section id="events-section" class="events-section text-center" onclick="handleEventsClick()">
+        <div class="container">
+            <h2 class="section-title mb-2 mt-4">Events & Media</h2>
+            <p class="section-subtitle">
+                Stay connected with our latest events, webinars, and educational content.
+            </p>
+
+            <div class="row g-4 align-items-start fs-5 mt-3">
+                <!-- Upcoming Events -->
+                <div class="col-md-6 text-start" data-aos="fade-left">
+                    <h3 class="fw-bold mb-4">Upcoming Events</h3>
+
+                    <!-- Event 1 -->
+                    <div class="d-flex mb-4">
+                        <div class="event-date me-3">
+                            <div>15</div><small>May</small>
+                        </div>
+                        <div>
+                            <div class="event-title mb-1">Sustainable Packaging Summit 2025</div>
+                            <div class="event-meta">
+                                Join industry leaders to discuss the future of sustainable packaging.
+                            </div>
+                            <div class="event-meta mt-1">📍 Mumbai, India</div>
+                        </div>
+                    </div>
+
+                    <!-- Event 2 -->
+                    <div class="d-flex mb-4">
+                        <div class="event-date me-3">
+                            <div>22</div><small>May</small>
+                        </div>
+                        <div>
+                            <div class="event-title mb-1">Eco-Innovation Workshop</div>
+                            <div class="event-meta">
+                                Interactive session on sustainable material innovations.
+                            </div>
+                            <div class="event-meta mt-1">💻 Virtual Event</div>
+                        </div>
+                    </div>
+
+                    <!-- Event 3 -->
+                    <div class="d-flex mb-0 mb-md-4">
+                        <div class="event-date me-3">
+                            <div>05</div><small>Jun</small>
+                        </div>
+                        <div>
+                            <div class="event-title mb-1">World Environment Day Special</div>
+                            <div class="event-meta">
+                                Product showcase and sustainability commitment ceremony.
+                            </div>
+                            <div class="event-meta mt-1">📍 Bangalore, India</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Placeholder -->
+                <div class="col-md-6" data-aos="fade-right">
+                    <div class="video-box">Video Placeholder</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials Section -->
+    <section id="testimonials-section" class="testimonial-section pl-16 pr-16" onclick="handleTestimonialsClick()">
+        <div class="container">
+            <h2 class="section-title mb-2 mt-5">What Our Customers Say</h2>
+            <p class="section-subtitle mt-3 mb-3">Hear from businesses and consumers who have made the switch to
+                sustainable
+                alternatives.</p>
+
+            <div class="flex overflow-x-auto gap-4 px-4 md:px-16 scrollbar-hide pt-2">
+                <!-- Testimonial 1 -->
+                <div class="col-md-4">
+                    <div class="testimonial-card h-100">
+                        <div class="star-rating">★★★★★</div>
+                        <p class="testimonial-text">
+                            "Switching to Aumekaa's sustainable packaging has been a game-changer for our restaurant.
+                            Our customers
+                            love the eco-friendly approach, and we've seen a significant increase in positive feedback
+                            and repeat
+                            business."
+                        </p>
+                        <div class="user-info mt-3">
+                            <div class="user-icon">👤</div>
+                            <div class="user-details text-start">
+                                <strong>Michael Rodriguez</strong>
+                                <small>Owner, Fresh Earth Café</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="col-md-4">
+                    <div class="testimonial-card h-100">
+                        <div class="star-rating">★★★★★</div>
+                        <p class="testimonial-text">
+                            "As an e-commerce business, we were looking for sustainable packaging solutions that
+                            wouldn't compromise
+                            on quality. Aumekaa delivered exactly what we needed. Our customers appreciate the
+                            eco-friendly packaging,
+                            and it aligns perfectly with our brand values."
+                        </p>
+                        <div class="user-info mt-3">
+                            <div class="user-icon">👤</div>
+                            <div class="user-details text-start">
+                                <strong>Samantha Chen</strong>
+                                <small>Founder, EcoStyle Boutique</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="col-md-4">
+                    <div class="testimonial-card h-100">
+                        <div class="star-rating">★★★★★</div>
+                        <p class="testimonial-text">
+                            "I've been using Aumekaa's bamboo cutlery set for over a year now, and I'm impressed by both
+                            the quality
+                            and durability. It's held up incredibly well with daily use, and I love knowing I'm making a
+                            small but
+                            meaningful impact on reducing plastic waste."
+                        </p>
+                        <div class="user-info mt-3">
+                            <div class="user-icon">👤</div>
+                            <div class="user-details text-start">
+                                <strong>James Wilson</strong>
+                                <small>Environmental Consultant</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="col-md-4">
+                    <div class="testimonial-card h-100">
+                        <div class="star-rating">★★★★★</div>
+                        <p class="testimonial-text">
+                            "I've been using Aumekaa's bamboo cutlery set for over a year now, and I'm impressed by both
+                            the quality
+                            and durability. It's held up incredibly well with daily use, and I love knowing I'm making a
+                            small but
+                            meaningful impact on reducing plastic waste."
+                        </p>
+                        <div class="user-info mt-3">
+                            <div class="user-icon">👤</div>
+                            <div class="user-details text-start">
+                                <strong>James Wilson</strong>
+                                <small>Environmental Consultant</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog-section" class="text-center mt-4" onclick="handleBlogClick()">
+        <div class="container">
+            <h2 class="section-title mb-2">Latest from Our Blog</h2>
+            <p class="section-subtitle mb-4">
+                Hear from businesses and consumers who have made the switch to sustainable alternatives.
+            </p>
+
+            <div class="row g-4 px-4">
+                <!-- Blog Card 1 -->
+                <div class="col-md-4" data-aos="fade-left">
+                    <div class="card blog-card h-100 d-flex flex-column">
+                        <img src="https://in.images.search.yahoo.com/images/view;_ylt=AwrKHO0wAz9o3MARrfe9HAx.;_ylu=c2VjA3NyBHNsawNpbWcEb2lkA2EwZDI3Nzg4NzliMmM3MTgwNjA2YjU1ZDQ3YmRmNDcyBGdwb3MDMgRpdANiaW5n?back=https%3A%2F%2Fin.images.search.yahoo.com%2Fsearch%2Fimages%3Fp%3Dblog%2Becommerce%2Bphotos%26ei%3DUTF-8%26type%3DE211IN1510G0%26fr%3Dmcafee%26fr2%3Dp%253As%252Cv%253Ai%252Cm%253Asb-top%26tab%3Dorganic%26ri%3D2&w=1254&h=836&imgurl=blog.shift4shop.com%2Fhubfs%2FiStock-1051616786.jpg&rurl=https%3A%2F%2Fblog.shift4shop.com%2Fthe-ecommerce-process&size=115KB&p=blog+ecommerce+photos&oid=a0d2778879b2c7180606b55d47bdf472&fr2=p%3As%2Cv%3Ai%2Cm%3Asb-top&fr=mcafee&tt=The+eCommerce+Process+%E2%80%94+How+eCommerce+Works+and+How+You+Can+Do+It+Too&b=0&ni=160&no=2&ts=&tab=organic&sigr=AvmgLij9Jg6U&sigb=rmj9pEQHXDrg&sigi=ARXJEPgc4Zjo&sigt=l19dVbqrsQpI&.crumb=YzzVYP1evBb&fr=mcafee&fr2=p%3As%2Cv%3Ai%2Cm%3Asb-top&type=E211IN1510G0"
+                            class="card-img-top" alt="Blog 1">
+                        <div class="card-body text-start d-flex flex-column">
+                            <div class="blog-meta mb-1">📅 April 18, 2025 · Sustainability</div>
+                            <div class="blog-title mb-1">The Future of Biodegradable Materials: What's Next?</div>
+                            <div class="blog-desc mb-3">Explore the latest innovations in biodegradable materials and
+                                how they're
+                                reshaping industries worldwide.</div>
+                            <a href="#" class="read-more mt-auto">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 2 -->
+                <div class="col-md-4" data-aos="fade-left" data-aos-delay="100">
+                    <div class="card blog-card h-100 d-flex flex-column">
+                        <img src="https://in.images.search.yahoo.com/images/view;_ylt=AwrKHO0wAz9o3MARrfe9HAx.;_ylu=c2VjA3NyBHNsawNpbWcEb2lkA2EwZDI3Nzg4NzliMmM3MTgwNjA2YjU1ZDQ3YmRmNDcyBGdwb3MDMgRpdANiaW5n?back=https%3A%2F%2Fin.images.search.yahoo.com%2Fsearch%2Fimages%3Fp%3Dblog%2Becommerce%2Bphotos%26ei%3DUTF-8%26type%3DE211IN1510G0%26fr%3Dmcafee%26fr2%3Dp%253As%252Cv%253Ai%252Cm%253Asb-top%26tab%3Dorganic%26ri%3D2&w=1254&h=836&imgurl=blog.shift4shop.com%2Fhubfs%2FiStock-1051616786.jpg&rurl=https%3A%2F%2Fblog.shift4shop.com%2Fthe-ecommerce-process&size=115KB&p=blog+ecommerce+photos&oid=a0d2778879b2c7180606b55d47bdf472&fr2=p%3As%2Cv%3Ai%2Cm%3Asb-top&fr=mcafee&tt=The+eCommerce+Process+%E2%80%94+How+eCommerce+Works+and+How+You+Can+Do+It+Too&b=0&ni=160&no=2&ts=&tab=organic&sigr=AvmgLij9Jg6U&sigb=rmj9pEQHXDrg&sigi=ARXJEPgc4Zjo&sigt=l19dVbqrsQpI&.crumb=YzzVYP1evBb&fr=mcafee&fr2=p%3As%2Cv%3Ai%2Cm%3Asb-top&type=E211IN1510G0"
+                            class="card-img-top" alt="Blog 2">
+                        <div class="card-body text-start d-flex flex-column">
+                            <div class="blog-meta mb-1">📅 April 12, 2025 · Green Business</div>
+                            <div class="blog-title mb-1">How Restaurants Are Going Plastic-Free</div>
+                            <div class="blog-desc mb-3">Discover how restaurants around the world are eliminating
+                                plastic and adopting
+                                sustainable alternatives.</div>
+                            <a href="#" class="read-more mt-auto">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 3 -->
+                <div class="col-md-4" data-aos="fade-left" data-aos-delay="200">
+                    <div class="card blog-card h-100 d-flex flex-column">
+                        <img src="https://in.images.search.yahoo.com/images/view;_ylt=AwrKHO0wAz9o3MARrfe9HAx.;_ylu=c2VjA3NyBHNsawNpbWcEb2lkA2EwZDI3Nzg4NzliMmM3MTgwNjA2YjU1ZDQ3YmRmNDcyBGdwb3MDMgRpdANiaW5n?back=https%3A%2F%2Fin.images.search.yahoo.com%2Fsearch%2Fimages%3Fp%3Dblog%2Becommerce%2Bphotos%26ei%3DUTF-8%26type%3DE211IN1510G0%26fr%3Dmcafee%26fr2%3Dp%253As%252Cv%253Ai%252Cm%253Asb-top%26tab%3Dorganic%26ri%3D2&w=1254&h=836&imgurl=blog.shift4shop.com%2Fhubfs%2FiStock-1051616786.jpg&rurl=https%3A%2F%2Fblog.shift4shop.com%2Fthe-ecommerce-process&size=115KB&p=blog+ecommerce+photos&oid=a0d2778879b2c7180606b55d47bdf472&fr2=p%3As%2Cv%3Ai%2Cm%3Asb-top&fr=mcafee&tt=The+eCommerce+Process+%E2%80%94+How+eCommerce+Works+and+How+You+Can+Do+It+Too&b=0&ni=160&no=2&ts=&tab=organic&sigr=AvmgLij9Jg6U&sigb=rmj9pEQHXDrg&sigi=ARXJEPgc4Zjo&sigt=l19dVbqrsQpI&.crumb=YzzVYP1evBb&fr=mcafee&fr2=p%3As%2Cv%3Ai%2Cm%3Asb-top&type=E211IN1510G0"
+                            class="card-img-top" alt="Blog 3">
+                        <div class="card-body text-start d-flex flex-column">
+                            <div class="blog-meta mb-1">📅 April 5, 2025 · Innovation</div>
+                            <div class="blog-title mb-1">Sustainable Packaging: The Consumer Perspective</div>
+                            <div class="blog-desc mb-3">How consumer preferences are driving the adoption of
+                                eco-friendly packaging
+                                solutions across industries.</div>
+                            <a href="#" class="read-more mt-auto">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4 mb-2">
+                <a href="#" class="btn btn-outline-success px-4 py-2 rounded-pill">View All Articles →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section with Newsletter -->
+    <section id="footer-section" class="text-center" onclick="handleFooterClick()">
+        <!-- Newsletter Section -->
+        <section class="">
+            <div class="relative mx-auto bg-green-50 shadow-md rounded-xl overflow-hidden px-6 md:px-6 py-6"
+                data-aos="fade-up">
+
+                <!-- Decorative Leaves -->
+                <img src="/assets/images/leaf.svg" alt=""
+                    class="pointer-events-none absolute top-0 left-0 h-48 opacity-20" />
+                <img src="/assets/images/leaf.svg" alt=""
+                    class="pointer-events-none absolute bottom-0 right-0 h-48 opacity-20" />
+
+                <div class="text-center">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-800">
+                        Stay Updated on Sustainable Innovations
+                    </h2>
+                    <p class="mt-2 text-gray-600 max-w-xl mx-auto">
+                        Join our newsletter to receive the latest updates on product launches, sustainability tips, and
+                        exclusive
+                        offers.
+                    </p>
+
+                    <form class="mt-8 mx-auto flex max-w-md justify-center">
+                        <input type="email" placeholder="Your email address"
+                            class="flex-1 rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                            required />
+                        <button type="submit"
+                            class="ml-3 rounded-md bg-green-600 px-5 py-2 font-semibold text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500">
+                            Subscribe
+                        </button>
+                    </form>
+
+                    <p class="mt-4 text-xs text-gray-500">
+                        By subscribing, you agree to our <a href="#" class="underline">Privacy Policy</a>. You can
+                        unsubscribe at
+                        any time.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <section id="footer-section" class="text-center" onclick="handleFooterClick()">
+
+            <!-- Newsletter Section (unchanged) -->
+
+
+            <!-- Footer -->
+            <footer class="bg-green-800 text-white pt-12 pb-24">
+                <div class="max-w-screen-xl mx-auto px-6 md:px-32">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 text-left">
+
+                        <!-- 1. Logo & Description -->
+                        <div>
+                            <img src="./assets/images/footer-logo.png" alt="Aumekaa Logo" class="mb-4 w-28" />
+                            <p class="text-sm text-white/90 mb-6">
+                                Providing 100% plastic-free, biodegradable, and compostable
+                                alternatives for both B2B and B2C markets—ensuring eco-friendly living
+                                without compromising quality.
+                            </p>
+                            <div class="flex space-x-3">
+                                <a href="#" class="bg-white/20 rounded-full p-2 hover:bg-white/30 transition">
+                                    <img src="./assets/images/facebook-icon.png" alt="Facebook" class="h-4 w-4" />
+                                </a>
+                                <a href="#" class="bg-white/20 rounded-full p-2 hover:bg-white/30 transition">
+                                    <img src="./assets/images/x-icon.png" alt="X" class="h-4 w-4" />
+                                </a>
+                                <a href="#" class="bg-white/20 rounded-full p-2 hover:bg-white/30 transition">
+                                    <img src="./assets/images/insta-icon.png" alt="Instagram" class="h-4 w-4" />
+                                </a>
+                                <a href="#" class="bg-white/20 rounded-full p-2 hover:bg-white/30 transition">
+                                    <img src="./assets/images/linkedin-icon.png" alt="LinkedIn" class="h-4 w-4" />
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 2. Products -->
+                        <div>
+                            <h4 class="font-semibold mb-4 text-white">Products</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>
+                                    <a href="#" class="text-white hover:underline">Everyday Use</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white hover:underline">Industrial Solutions</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white hover:underline">Foodservice Packaging</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white hover:underline">E-Commerce Packaging</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white hover:underline">Bamboo Products</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 3. Company -->
+                        <div>
+                            <h4 class="font-semibold mb-4 text-white">Company</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>
+                                    <a href="#" class="text-white hover:underline">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white hover:underline">Sustainability</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white hover:underline">Blog &amp; News</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white hover:underline">Careers</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white hover:underline">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 4. Contact -->
+                        <div>
+                            <h4 class="font-semibold mb-4 text-white">Contact</h4>
+                            <ul class="space-y-4 text-sm text-white/90">
+                                <li class="flex items-start gap-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-1 text-white/70"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17 20h5v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2h5" />
+                                    </svg>
+                                    <span>123 Eco Street, Green Park, Bangalore 560001, India</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-1 text-white/70"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 
+                     002-2v-5a2 2 0 00-2-2H5a2 2 0 00-2 2v5a2 2 0 002 2z" />
+                                    </svg>
+                                    <span>+91 98765 43210</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-1 text-white/70"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M16 12H8m8 0H8m8 0H8m8 0H8" />
+                                    </svg>
+                                    <span>info@aumekaa.com</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <!-- Divider & Bottom Bar -->
+                    <div
+                        class="border-t border-white/20 mt-10 pt-4 flex flex-col md:flex-row justify-between items-center text-sm text-white/70">
+                        <p>© 2025 Aumekaa Global Products Pvt. Ltd. All rights reserved.</p>
+                        <div class="space-x-6 mt-2 md:mt-0">
+                            <a href="#" class="text-white hover:underline">Privacy Policy</a>
+                            <a href="#" class="text-white hover:underline">Terms of Service</a>
+                            <a href="#" class="text-white hover:underline">Cookie Policy</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </section>
+
+
+    </section>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>
